@@ -7,4 +7,5 @@ var teacher= new teachers({
     password:String,
 
 })
-model.exports=mongoose.model("teacher",teacher);
+const teach=mongoose.model("teacher",teacher);
+module.exports=teach
