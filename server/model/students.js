@@ -7,6 +7,6 @@ var student= new students({
     password:String,
     level:Number
 })
-model.exports=mongoose.model("students",student);
+module.exports=mongoose.model("students",student);
 
 
