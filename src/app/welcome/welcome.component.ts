@@ -12,4 +12,7 @@ export class WelcomeComponent {
   navigateToStudent = () => {
     this.router.navigate(['/login']);
   }
+  navigateToTeacher = () => {
+    this.router.navigate(['/loginTeach']);
+  }
 }
