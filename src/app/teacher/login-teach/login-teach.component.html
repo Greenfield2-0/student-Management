@@ -1,1 +1,14 @@
-<p>login-teach works!</p>
+<form class="form">
+    <p class="title">Sign in</p>
+    <label>
+        <input required="" placeholder="" type="email" class="input" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}">
+        <span>Email</span>
+    </label> 
+        
+    <label>
+        <input required="" placeholder="" type="password" class="input" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+        <span>Password</span>
+    </label>
+    <button class="submit" (click)="signIn()">Submit</button>
+    <p class="signin">Dont have an acount ? <a href="#">SignUp</a> </p>
+</form>
