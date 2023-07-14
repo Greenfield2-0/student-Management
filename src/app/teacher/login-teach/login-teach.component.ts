@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginTeachService } from 'src/app/login-teach.service';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../user';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-login-teach',
@@ -11,7 +12,7 @@ import { User } from '../../user';
 export class LoginTeachComponent {
 user:User;
 
-  constructor(private dataservice: LoginTeachService) {
+  constructor(private dataservice: LoginTeachService,private route:Router) {
   this.user={
     id:"",
     name:"",
@@ -29,4 +30,7 @@ user:User;
         console.log(err)
       }) 
   }   
+  tosignup=()=>{
+    this.route.navigate(['/signUpTeach'])
+  }
 }
