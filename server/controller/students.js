@@ -1,9 +1,13 @@
 var student = require("../model/students")
 
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+
 const getAll=async(req,res)=>{
     try{
         const stud = await student.find()  
         res.json(stud)
+        const hashedPassword = await bcrypt.hash(password, 10);
       }
       catch (err) {
         res.status(500).send(err)
