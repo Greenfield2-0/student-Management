@@ -53,14 +53,13 @@ const deleteStud=async(req,res)=>{
 const SignUP=async(req,res)=>{
     try{
         const {name,email,password}=req.body;
-        const cours=""
         const user=await teach.findOne({email:email})
         if(user){
             res.json("mail exist")
         }
         else{
             const hashedPw=await bcrypt.hash(password,10)
-            const teacher = await teach.create({name,email,cours,hashedPw});
+            const teacher = await teach.create({name,email,cours:"",password:hashedPw});
             console.log(teacher);
             const token=  jwt.sign({id:teacher.id,email:email},"teacher");
              res.status(201).json({teacher,token});
@@ -79,9 +78,8 @@ const login=async(req,res)=>{
        const {email,password}=req.body;
        const user=await teach.findOne({email:email})
        let isValidpw=false
-       if(user !==null){
-        // isValidpw= await bcrypt.compare(password,user.password);
-        isValidpw=user.password===password
+       if(user){
+        isValidpw= await bcrypt.compare(password,user.password);
         if(isValidpw){
              console.log('u are logged',isValidpw)
             const token= jwt.sign({id:user.id,email:email},"teacher");

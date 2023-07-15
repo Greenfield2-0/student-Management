@@ -27,5 +27,8 @@ export class LoginTeachService {
   login=(email:String,pw:String)=>{
     return axios.post(`http://localhost:5000/api/teachers/login`,{email:email,password:pw})
   }
+  signUp=(name:String,email:String,pw:String)=>{
+    return axios.post(`http://localhost:5000/api/teachers/signup`,{name:name,email:email,password:pw})
+  }
   
 }

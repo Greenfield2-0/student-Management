@@ -6,6 +6,10 @@
     </div>
     <br>
     <div class="input_container">
+        <label class="input_label" for="password_field">name</label>   
+        <input placeholder="name" title="Inpit title" name="input-name" class="input_field" [(ngModel)]="user.name">
+      </div>
+    <div class="input_container">
       <label class="input_label" for="email_field">Email</label>
       <input placeholder="name@mail.com" title="Inpit title" name="input-name" type="text" class="input_field" id="email_field" [(ngModel)]="user.email">
     </div>
@@ -13,8 +17,7 @@
       <label class="input_label" for="password_field">Password</label>   
       <input placeholder="Password" title="Inpit title" name="input-name" type="password" class="input_field" id="password_field" [(ngModel)]="user.password">
     </div>
-    <button (click)="signIn()" title="Sign In" type="submit" class="sign-in_btn">
-      <span>Sign In</span>
+    <button title="Sign In" type="submit" class="sign-in_btn" (click)="signup()">
+      <span>Sign Up</span>
     </button>
-    <p (click)="tosignup()">signUp</p>
   </form>
