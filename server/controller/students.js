@@ -1,9 +1,13 @@
 var student = require("../model/students")
 
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
+
 const getAll=async(req,res)=>{
     try{
         const stud = await student.find()  
         res.json(stud)
+        const hashedPassword = await bcrypt.hash(password, 10);
       }
       catch (err) {
         res.status(500).send(err)
@@ -67,6 +71,52 @@ const getOne = async (req,res)=>{
     }
 }
 
+const signUp= async(req,res)=>{
+    try{
+        const {name,age,email,password,level}=req.body
+        const stud= await student.findOne({email:email})
+        if(stud){
+            res.send("email mawjood")
+        }
+        else{
+            const hashedPwd = await bcrypt.hash(password,10)
+            const students = await student.create({name,age,email,password:hashedPwd,level})
+            const token = jwt.sign({id:students.id,email:email},"sudentToken")
+            res.status(200).send({students,token})
+        }
+    }
+    catch (err) {
+        console.log(err)
+        return res.status(400).send({ message: err.message });
+      }
+}
+const login = async(req,res)=>{
+    try{
+            const { email, password } = req.body;
+            const user = await student.findOne({ email });
+            if (!user) {
+              return res
+                .status(400)
+                .send({ message: "Wrong Email or Password", status: false });
+            }
+        
+            const match = await bcrypt.compare(password,user.password);
+        
+            if (!match) {
+              return res
+                .status(400)
+                .send({ message: "Wrong Email or Password", status: false });
+            }
+        
+            const token = jwt.sign({user},"sudentToken")
+        
+            return res.status(200).send({ user, token, status: true });
+     }
+     catch (error) {
+        console.log(error,'f ctrl')
+        res.status(404);
+      }
+}
 
 
 module.exports= {
@@ -75,5 +125,7 @@ module.exports= {
     updateProfile,
     deleteStudent,
     getOne,
-    updateName
+    updateName,
+    signUp,
+    login
 }

@@ -7,6 +7,7 @@ import { StudentHomeComponent } from './student/student-home/student-home.compon
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './student/login/login.component';
 import { LoginTeachComponent } from './teacher/login-teach/login-teach.component';
+import { RegisterComponent } from './student/register/register.component';
 import { SignupTeachComponent } from './teacher/signup-teach/signup-teach.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SignupTeachComponent } from './teacher/signup-teach/signup-teach.compon
     WelcomeComponent,
     LoginComponent,
     LoginTeachComponent,
+    RegisterComponent,
     SignupTeachComponent
   ],
   imports: [
