@@ -8,4 +8,6 @@ router.put("/update/:id",student.updateProfile)
 router.delete("/delete/:id",student.deleteStudent)
 router.get("/one/:name",student.getOne)
 router.put("/name/:id",student.updateName)
+router.post("/signup",student.signUp)
+router.post("/login",student.login)
 module.exports = router

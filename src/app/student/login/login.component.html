@@ -1,3 +1,42 @@
-<p>login works!</p>
+<!-- <p>login works!</p>
 <button (click)="showStudents()">Login</button>
-<button (click)="signUp()" >Register</button>
+<button (click)="signUp()" >Register</button> -->
+
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+      <h1>Creative SignIn Form</h1>
+      <div class="main-agileinfo">
+        <div class="agileits-top">
+          <form action="#" method="post">
+            <input class="text email" type="email" name="email" placeholder="Email" required="" [(ngModel)]="students.email">
+            <input class="text" type="password" name="password" placeholder="Password" required="" [(ngModel)]="students.password">
+            <div class="wthree-text">
+              <div class="clear"> </div>
+            </div>
+            <input type="submit" (click)="login()" value="Login">
+          </form>
+          <p>Don't have an Account? <a href="register"> SignUp Now!</a></p>
+        </div>
+      </div>
+      <!-- copyright -->
+      <div class="colorlibcopy-agile">
+        <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+      </div>
+      <!-- //copyright -->
+      <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- //main -->
+  </body>
+  
