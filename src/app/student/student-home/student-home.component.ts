@@ -23,9 +23,12 @@ getStudents=()=>{
    })
 
   }
+
+  // getOneStudent=(){
+  //   this.service.
+  // }
   ngOnInit(){
    this.getStudents()
   }
-
 
 }
