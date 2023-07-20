@@ -3,7 +3,7 @@ body {
     font-family: Helvetica, sans-serif;
     color: #222;
   }
-  
+
   .page {
     margin: 50px auto;
     width: 70%;
@@ -22,8 +22,9 @@ body {
     font-weight: bold;
     color: #555;
   }
+
   
-  .page-header .student-search {
+  .page-header .search {
     float: right;
   }
   
@@ -42,9 +43,25 @@ body {
     background-color: #4ba6c3;
     color: #fff;
   }
-  
-  .student-list {
+  button.search {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4ba6c3;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    right : 60%
   }
+  
+  button.search:hover {
+    background-color: #04746e;
+  }
+  
+  button.search:focus {
+    outline: none;
+  }
+
   
   .student-item {
     margin: 0 0 20px 0;

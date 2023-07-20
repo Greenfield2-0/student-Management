@@ -23,10 +23,10 @@ getStudents=()=>{
    })
 
   }
-
-  // getOneStudent=(){
-  //   this.service.
-  // }
+  search = () => {
+    this.route.navigate(['/search']);
+  }
+ 
   ngOnInit(){
    this.getStudents()
   }

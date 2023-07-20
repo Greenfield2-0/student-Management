@@ -30,6 +30,8 @@ export class StudServiceService {
   login=(email:String,password:String)=>{
     return axios.post(`http://localhost:5000/api/student/login`,{email:email,password:password})
   }
-  // getOneStudent=(id:String)
+  getOneStudent=(name:String)=>{
+    return axios.get(`http://localhost:5000/api/student/one/${name}`)
+  }
 
 }

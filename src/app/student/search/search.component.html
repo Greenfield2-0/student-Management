@@ -1,0 +1,19 @@
+<body>
+  <div class="page">
+    <div class="page-header cf">
+      <h2>Search for Students</h2>
+    </div>
+    <ul class="student-list">
+      <div class="container">
+        <input type="text" placeholder="Search..." [(ngModel)]="searchName" (keyup.enter)="getOne()">
+        <div class="search"></div>
+      </div>
+      <ol *ngFor="let student of students" class="student-item cf">
+        <div class="student-details">
+          <h3>{{ student.name }}</h3>
+          <span class="email">{{ student.email }}</span>
+        </div>
+    </ol>
+    </ul>
+  </div>
+</body>
