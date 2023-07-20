@@ -6,6 +6,7 @@ import { LoginComponent } from './student/login/login.component';
 import { LoginTeachComponent} from './teacher/login-teach/login-teach.component';
 import {RegisterComponent} from './student/register/register.component'
 import { SignupTeachComponent} from './teacher/signup-teach/signup-teach.component';
+import {SearchComponent} from './student/search/search.component'
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent },
@@ -14,6 +15,8 @@ const routes: Routes = [
   {path:'loginTeach', component: LoginTeachComponent },
   {path:'register', component: RegisterComponent },
   {path:'signUpTeach', component: SignupTeachComponent },
+  {path:'search', component: SearchComponent },
+
 
 
 ];
