@@ -25,6 +25,7 @@ signUp=()=>{
   this.service.signUp(this.students.name,this.students.age,this.students.email,this.students.password,this.students.level).then((res)=>{
     this.students=res.data
     console.log(res.data)
+    this.route.navigate(['/login']);
    }).catch((err)=>{
      console.log(err)
    })
